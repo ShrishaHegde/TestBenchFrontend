@@ -1,0 +1,74 @@
+{
+    "gen20x": [
+        {
+            "vin":"W1K2140041Z900021",
+            "region":"EMEA",
+            "gen":"Gen20x",
+            "version":"i2",
+            "release":"SOP",
+            "stage":"Non_prod",
+            "Cubicle":"B03-135",
+            "SwVersion":"344.0",
+            "connected":true
+        },
+        {
+            "vin":"W1K2140041Z900022",
+            "region":"AMAP",
+            "gen":"Gen20x",
+            "version":"i3",
+            "release":"FUP1",
+            "stage":"prod",
+            "Cubicle":"B03-136",
+            "SwVersion":"374.04",
+            "connected":true
+        },
+        {
+            "vin":"W1K2140041Z900023",
+            "region":"AMAP",
+            "gen":"Gen20x",
+            "version":"i3",
+            "release":"FUP2",
+            "stage":"prod",
+            "Cubicle":"B03-136",
+            "SwVersion":"374.04",
+            "connected":false
+        }   
+    ],
+
+    "ntg" : [
+        {
+            "vin": "W1K2140041Z900024",
+            "region": "AMAP",
+            "gen": "NTG",
+            "version": "7",
+            "release": "FUP2",
+            "stage": "prod",
+            "Cubicle": "B03-123",
+            "SwVersion": "333.09",
+            "connected": true
+        },
+        {
+            "vin": "W1K2140041Z900025",
+            "region": "CHINA",
+            "gen": "NTG",
+            "version": "6",
+            "release": "SOP",
+            "stage": "Non-prod",
+            "Cubicle": "B03-231",
+            "SwVersion": "323.19",
+            "connected": true
+        },
+        {
+            "vin": "W1K2140041Z900026",
+            "region": "EMEA",
+            "gen": "NTG",
+            "version": "5.5",
+            "release": "FUP1",
+            "stage": "Non-prod",
+            "Cubicle": "B03-233",
+            "SwVersion": "378.1",
+            "connected": true
+        }
+    ]
+
+}
