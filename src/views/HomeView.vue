@@ -4,37 +4,62 @@
     <div class="buttons">
       <button type="button" class="btn btn-primary" @click="fetchGen20x">Gen20X</button>
     </div>
-    <div v-if="showGen20x">
-      <div class="row">
-        <div class="col-md-auto" v-for="card in gen20x" :key="card.vin">
-          <div class="card" style="width: 18rem;margin:30px">
-            <div class="card-body">
-              <h5 class="card-title">Gen20X.{{ card.version }}</h5>
-              <p class="card-text">Release : {{ card.release }}</p>
-              <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
-              <p class="card-text">{{ card.vin }}</p>
-            </div>
-          </div>
-        </div>
+    <div v-if="showGen20x" class="row">
+      <div class="col" v-for="card in gen20x" :key="card.vin">
+          <vue-flip active-click="true" height="" width="auto">
+            <template v-slot:front>
+              <div class="card" style="width: 18rem;margin:30px">
+                <div class="card-body">
+                  <h5 class="card-title">Gen20X.{{ card.version }}</h5>
+                  <p class="card-text">Release : {{ card.release }}</p>
+                  <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
+                  <p class="card-text">{{ card.vin }}</p>
+                </div>
+              </div>
+            </template>
+            <template v-slot:back>
+              <div class="card" style="width: 18rem;margin:30px">
+                <div class="card-body">
+                  <h5 class="card-title">Status : {{ card.connected? "Connected" : "Not Connected"}}</h5>
+                  <p class="card-text">Stage : {{ card.stage }}</p>
+                  <p class="card-text">Software Version : {{ card.SwVersion }}</p>
+                  <p class="card-text">Region:{{ card.region }}</p>
+                </div>
+              </div>
+            </template>
+          </vue-flip>
       </div>
     </div>
   </div>
+
   <div class="home">
     <div class="buttons">
       <button type="button" class="btn btn-primary" @click="fetchNtg">NTG</button>
     </div>
-    <div v-if="showNtg">
-      <div class="row">
-        <div class="col-md-auto" v-for="card in ntg" :key="card.vin">
-          <div class="card" style="width: 18rem;margin:30px">
-            <div class="card-body">
-              <h5 class="card-title">NTG{{ card.version }}</h5>
-              <p class="card-text">Release : {{ card.release }}</p>
-              <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
-              <p class="card-text">{{ card.vin }}</p>
-            </div>
-          </div>
-        </div>
+    <div v-if="showNtg" class="row">
+      <div class="col" v-for="card in ntg" :key="card.vin">
+          <vue-flip active-click="true" height="" width="auto">
+            <template v-slot:front>
+              <div class="card" style="width: 18rem;margin:30px">
+                <div class="card-body">
+                  <h5 class="card-title">NTG{{ card.version }}</h5>
+                  <p class="card-text">Release : {{ card.release }}</p>
+                  <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
+                  <p class="card-text">{{ card.vin }}</p>
+                </div>
+              </div>
+            </template>
+            <template v-slot:back>
+              <div class="card" style="width: 18rem;margin:30px">
+                <div class="card-body">
+                  <h5 class="card-title">{{ card.connected? "Connected" : "Not Connected" }}</h5>
+                  <p class="card-text">Stage : {{ card.stage }}</p>
+                  <p class="card-text">Software Version : {{ card.SwVersion }}</p>
+                  <p class="card-text">Region:{{ card.region }}</p>
+                </div>
+              </div>
+            </template>
+          </vue-flip>
       </div>
     </div>
   </div>
@@ -42,9 +67,12 @@
 
 <script>
 // @ is an alias to /src
+import { VueFlip } from 'vue-flip';
 export default {
   name: 'HomeView',
-  
+  components: {
+    VueFlip
+  },
   data() {
     return {
       showGen20x: false,
@@ -92,6 +120,7 @@ export default {
 .row {
   display: flex;
   justify-content: center;
+  height: 200px;
 }
 .card:hover{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -101,4 +130,6 @@ export default {
   border-radius: 10px;
   background: rgba(121, 204, 230, 0.24);
 }
+
+
 </style>
