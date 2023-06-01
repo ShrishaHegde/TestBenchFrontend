@@ -3,6 +3,7 @@
   <div class="home">
     <div class="buttons">
       <button type="button" class="btn btn-primary" @click="fetchGen20x">Gen20X</button>
+      <button type="button" class="btn btn-primary" @click="fetchNtg">NTG</button>
     </div>
     <div v-if="showGen20x" class="row">
       <div class="col" v-for="card in gen20x" :key="card.vin">
@@ -20,7 +21,7 @@
             <template v-slot:back>
               <div class="card" style="width: 18rem;margin:30px">
                 <div class="card-body">
-                  <h5 class="card-title">Status : {{ card.connected? "Connected" : "Not Connected"}}</h5>
+                  <h5 class="card-title">{{ card.connected? "Connected" : "Not Connected"}}</h5>
                   <p class="card-text">Stage : {{ card.stage }}</p>
                   <p class="card-text">Software Version : {{ card.SwVersion }}</p>
                   <p class="card-text">Region:{{ card.region }}</p>
@@ -33,9 +34,6 @@
   </div>
 
   <div class="home">
-    <div class="buttons">
-      <button type="button" class="btn btn-primary" @click="fetchNtg">NTG</button>
-    </div>
     <div v-if="showNtg" class="row">
       <div class="col" v-for="card in ntg" :key="card.vin">
           <vue-flip active-click="true" height="" width="auto">
@@ -82,12 +80,22 @@ export default {
   methods: {
    
     fetchGen20x() {
-      this.showGen20x = !this.showGen20x;
-      this.$store.dispatch("fetchGen20x");
+      if(!this.showGen20x){
+        this.showGen20x = true;
+        this.$store.dispatch("fetchGen20x");
+        if(this.showNtg){
+          this.showNtg = false;
+        } 
+      }
     },
     fetchNtg() {
-      this.showNtg = !this.showNtg;
-      this.$store.dispatch("fetchNtg");
+      if(!this.showNtg){
+        this.showNtg = true;
+        this.$store.dispatch("fetchNtg");
+        if(this.showGen20x){
+          this.showGen20x = false;
+        } 
+      }
     }
   },
   computed: {
@@ -107,14 +115,14 @@ export default {
 <style>
 .btn {
   display: block;
-  width: 50%;
+  width: 20%;
   margin: 50px 0px 50px 0px;
   padding: 20px;
 }
 
 .buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .row {
