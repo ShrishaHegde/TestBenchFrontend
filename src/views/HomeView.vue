@@ -1,13 +1,49 @@
 <template>
-  <h3>Head unit categories</h3>
   <div class="home">
     <div class="buttons">
-      <button type="button" class="btn btn-primary" @click="fetchGen20x">Gen20X</button>
-      <button type="button" class="btn btn-primary" @click="fetchNtg">NTG</button>
+      <button type="button" class="btn btn-primary" style="display: block;
+      width: 20%;
+      margin: 50px 0px 50px 0px;
+      padding: 20px;" @click="fetchGen20x">Gen20X</button>
+      <button type="button" class="btn btn-primary" style="display: block;
+      width: 20%;
+      margin: 50px 0px 50px 0px;
+      padding: 20px;" @click="fetchNtg">NTG</button>
     </div>
-    <div v-if="showGen20x" class="row">
-      <div class="col" v-for="card in gen20x" :key="card.vin">
-          <vue-flip active-click="true" height="" width="auto">
+    <div v-if="showGen20x">
+
+      <div class="filters">
+        Version
+        <select v-model="gen.version">
+          <option value="">All</option>
+          <option value="i2">i2</option>
+          <option value="i3">i3</option>
+          <option value="i4">i4</option>
+        </select>
+        Release
+        <select v-model="gen.release">
+          <option value="">All</option>
+          <option value="SOP">SOP</option>
+          <option value="FUP1">FUP1</option>
+          <option value="FUP2">FUP2</option>
+        </select>
+        Stage
+        <select v-model="gen.stage">
+          <option value="">All</option>
+          <option value="prod">Prod</option>
+          <option value="non-prod">Non Prod</option>
+        </select>
+        Region
+        <select v-model="gen.region">
+          <option value="">All</option>
+          <option value="EMEA">EMEA</option>
+          <option value="AMAP">AMAP</option>
+          <option value="CHINA">CHINA</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="col" v-for="card in filteredGen20x" :key="card.vin">
+          <vue-flip active-click="true" class="flipper">
             <template v-slot:front>
               <div class="card" style="width: 18rem;margin:30px">
                 <div class="card-body">
@@ -15,51 +51,96 @@
                   <p class="card-text">Release : {{ card.release }}</p>
                   <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
                   <p class="card-text">{{ card.vin }}</p>
+                  <div class="buttons">
+                    <button type="button" class="btn btn-primary" >Book</button>
+                    <button type="button" class="btn btn-primary" >Status</button>
+                  </div>
                 </div>
               </div>
             </template>
             <template v-slot:back>
               <div class="card" style="width: 18rem;margin:30px">
                 <div class="card-body">
-                  <h5 class="card-title">{{ card.connected? "Connected" : "Not Connected"}}</h5>
+                  <h5 class="card-title">{{ card.connected ? "Connected" : "Not Connected" }}</h5>
                   <p class="card-text">Stage : {{ card.stage }}</p>
                   <p class="card-text">Software Version : {{ card.SwVersion }}</p>
                   <p class="card-text">Region:{{ card.region }}</p>
+                  <div class="buttons">
+                    <button type="button"  class="btn btn-primary" @click="fetchServices">Services</button>
+                  </div>
                 </div>
               </div>
             </template>
           </vue-flip>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="home">
-    <div v-if="showNtg" class="row">
-      <div class="col" v-for="card in ntg" :key="card.vin">
-          <vue-flip active-click="true" height="" width="auto">
-            <template v-slot:front>
-              <div class="card" style="width: 18rem;margin:30px">
-                <div class="card-body">
-                  <h5 class="card-title">NTG{{ card.version }}</h5>
-                  <p class="card-text">Release : {{ card.release }}</p>
-                  <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
-                  <p class="card-text">{{ card.vin }}</p>
-                </div>
+    <div v-if="showNtg">
+
+      <div class="filters">
+        Version
+        <select v-model="nt.version">
+          <option value="">All</option>
+          <option value="5">5</option>
+          <option value="5.5">5.5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+        </select>
+        Release
+        <select v-model="nt.release">
+          <option value="">All</option>
+          <option value="SOP">SOP</option>
+          <option value="FUP1">FUP1</option>
+          <option value="FUP2">FUP2</option>
+        </select>
+        Stage
+        <select v-model="nt.stage">
+          <option value="">All</option>
+          <option value="prod">Prod</option>
+          <option value="non-prod">Non Prod</option>
+        </select>
+        Region
+        <select v-model="nt.region">
+          <option value="">All</option>
+          <option value="EMEA">EMEA</option>
+          <option value="AMAP">AMAP</option>
+          <option value="CHINA">CHINA</option>
+        </select>
+      </div>
+      <div class="row">
+      <div class="col" v-for="card in filteredNtg" :key="card.vin">
+        <vue-flip active-click="true" class="flipper">
+          <template v-slot:front>
+            <div class="card" style="width: 18rem;margin:30px">
+              <div class="card-body">
+                <h5 class="card-title">NTG{{ card.version }}</h5>
+                <p class="card-text">Release : {{ card.release }}</p>
+                <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
+                <p class="card-text">{{ card.vin }}</p>
               </div>
-            </template>
-            <template v-slot:back>
-              <div class="card" style="width: 18rem;margin:30px">
-                <div class="card-body">
-                  <h5 class="card-title">{{ card.connected? "Connected" : "Not Connected" }}</h5>
-                  <p class="card-text">Stage : {{ card.stage }}</p>
-                  <p class="card-text">Software Version : {{ card.SwVersion }}</p>
-                  <p class="card-text">Region:{{ card.region }}</p>
-                </div>
+            </div>
+          </template>
+          <template v-slot:back>
+            <div class="card" style="width: 18rem;margin:30px">
+              <div class="card-body">
+                <h5 class="card-title">{{ card.connected ? "Connected" : "Not Connected" }}</h5>
+                <p class="card-text">Stage : {{ card.stage }}</p>
+                <p class="card-text">Software Version : {{ card.SwVersion }}</p>
+                <p class="card-text">Region:{{ card.region }}</p>
               </div>
-            </template>
-          </vue-flip>
+            </div>
+          </template>
+        </vue-flip>
+      </div>
       </div>
     </div>
+  </div>
+
+  <div v-for="service in services" :key="service">
+    {{ service.id }}
   </div>
 </template>
 
@@ -74,27 +155,42 @@ export default {
   data() {
     return {
       showGen20x: false,
-      showNtg: false
+      showNtg: false,
+      gen: {
+        version: "",
+        release: "",
+        stage: "",
+        region: ""
+      },
+      nt: {
+        version: "",
+        release: "",
+        stage: "",
+        region: ""
+      }
+
     }
   },
   methods: {
-   
+    fetchServices() {
+      this.$store.dispatch("fetchServices");
+    },
     fetchGen20x() {
-      if(!this.showGen20x){
+      if (!this.showGen20x) {
         this.showGen20x = true;
         this.$store.dispatch("fetchGen20x");
-        if(this.showNtg){
+        if (this.showNtg) {
           this.showNtg = false;
-        } 
+        }
       }
     },
     fetchNtg() {
-      if(!this.showNtg){
+      if (!this.showNtg) {
         this.showNtg = true;
         this.$store.dispatch("fetchNtg");
-        if(this.showGen20x){
+        if (this.showGen20x) {
           this.showGen20x = false;
-        } 
+        }
       }
     }
   },
@@ -107,18 +203,33 @@ export default {
     },
     ntg() {
       return this.$store.state.ntg;
+    },
+    filteredGen20x() {
+      const version = this.gen.version.toLowerCase();
+      const release = this.gen.release.toLowerCase();
+      const stage = this.gen.stage.toLowerCase();
+      const region = this.gen.region.toLowerCase();
+      return this.gen20x.filter(card => {
+        return card.version.toLowerCase().includes(version) & card.release.toLowerCase().includes(release) & card.stage.toLowerCase().startsWith(stage) & card.region.toLowerCase().includes(region);
+      });
+    },
+    filteredNtg() {
+      const version = this.nt.version.toLowerCase();
+      const release = this.nt.release.toLowerCase();
+      const stage = this.nt.stage.toLowerCase();
+      const region = this.nt.region.toLowerCase();
+      return this.ntg.filter(card => {
+        return card.version.toLowerCase().includes(version) & card.release.toLowerCase().includes(release) & card.stage.toLowerCase().startsWith(stage) & card.region.toLowerCase().includes(region);
+      });
+    },
+    services() {
+      return this.$store.state.services;
     }
   },
 }
 </script>
 
 <style>
-.btn {
-  display: block;
-  width: 20%;
-  margin: 50px 0px 50px 0px;
-  padding: 20px;
-}
 
 .buttons {
   display: flex;
@@ -126,18 +237,24 @@ export default {
 }
 
 .row {
-  display: flex;
-  justify-content: center;
-  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
 }
-.card:hover{
+
+.card:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.card-text{
-  border: 1px solid ;
+
+.card-text {
+  border: 1px solid;
   border-radius: 10px;
   background: rgba(121, 204, 230, 0.24);
 }
-
-
+.flipper{
+  height: 240px;
+}
+body{
+  background: rgba(243, 220, 179, 0.322)
+}
 </style>

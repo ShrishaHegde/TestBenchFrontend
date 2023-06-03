@@ -1,41 +1,73 @@
 {
     "gen20x": [
         {
-            "vin":"W1K2140041Z900021",
-            "region":"EMEA",
-            "gen":"Gen20x",
-            "version":"i2",
-            "release":"SOP",
-            "stage":"Non_prod",
-            "Cubicle":"B03-135",
-            "SwVersion":"344.0",
-            "connected":true
+            "vin": "W1K2140041Z900021",
+            "region": "EMEA",
+            "gen": "Gen20x",
+            "version": "i2",
+            "release": "SOP",
+            "stage": "non-prod",
+            "Cubicle": "B03-135",
+            "SwVersion": "344.0",
+            "connected": true
         },
         {
-            "vin":"W1K2140041Z900022",
-            "region":"AMAP",
-            "gen":"Gen20x",
-            "version":"i3",
-            "release":"FUP1",
-            "stage":"prod",
-            "Cubicle":"B03-136",
-            "SwVersion":"374.04",
-            "connected":true
+            "vin": "W1K2140041Z900022",
+            "region": "AMAP",
+            "gen": "Gen20x",
+            "version": "i3",
+            "release": "FUP1",
+            "stage": "prod",
+            "Cubicle": "B03-136",
+            "SwVersion": "374.04",
+            "connected": true
         },
         {
-            "vin":"W1K2140041Z900023",
-            "region":"AMAP",
-            "gen":"Gen20x",
-            "version":"i3",
-            "release":"FUP2",
-            "stage":"prod",
-            "Cubicle":"B03-136",
-            "SwVersion":"374.04",
-            "connected":false
-        }   
+            "vin": "W1K2140041Z900023",
+            "region": "AMAP",
+            "gen": "Gen20x",
+            "version": "i3",
+            "release": "FUP2",
+            "stage": "prod",
+            "Cubicle": "B03-136",
+            "SwVersion": "374.04",
+            "connected": false
+        },
+        {
+            "vin": "W1K2140041Z900023",
+            "region": "AMAP",
+            "gen": "Gen20x",
+            "version": "i3",
+            "release": "FUP2",
+            "stage": "prod",
+            "Cubicle": "B03-136",
+            "SwVersion": "374.04",
+            "connected": false
+        },
+        {
+            "vin": "W1K2140041Z900023",
+            "region": "AMAP",
+            "gen": "Gen20x",
+            "version": "i3",
+            "release": "FUP2",
+            "stage": "prod",
+            "Cubicle": "B03-136",
+            "SwVersion": "374.04",
+            "connected": false
+        },
+        {
+            "vin": "W1K2140041Z900023",
+            "region": "AMAP",
+            "gen": "Gen20x",
+            "version": "i3",
+            "release": "FUP2",
+            "stage": "prod",
+            "Cubicle": "B03-136",
+            "SwVersion": "374.04",
+            "connected": false
+        }
     ],
-
-    "ntg" : [
+    "ntg": [
         {
             "vin": "W1K2140041Z900024",
             "region": "AMAP",
@@ -53,7 +85,7 @@
             "gen": "NTG",
             "version": "6",
             "release": "SOP",
-            "stage": "Non-prod",
+            "stage": "non-prod",
             "Cubicle": "B03-231",
             "SwVersion": "323.19",
             "connected": true
@@ -64,11 +96,532 @@
             "gen": "NTG",
             "version": "5.5",
             "release": "FUP1",
-            "stage": "Non-prod",
+            "stage": "non-prod",
             "Cubicle": "B03-233",
             "SwVersion": "378.1",
             "connected": true
         }
-    ]
-
+    ],
+    "W1K2140041Z900026": [
+            {
+                "id": 512,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 2,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 515,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 3,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 516,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 775,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 780,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 784,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 785,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 530,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 531,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 787,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 532,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 533,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 534,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 790,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 537,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 793,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 794,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 796,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 799,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 544,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 800,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 550,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 41,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 809,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 561,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 817,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 819,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 822,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 823,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 828,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 574,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 576,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 839,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 840,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 842,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 844,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 847,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 592,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 848,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 593,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 852,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 853,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 855,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 856,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 606,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 863,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 864,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 866,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 867,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 870,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 620,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 622,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 624,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 627,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 630,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 636,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 638,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 641,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 650,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 652,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 655,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 658,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 659,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 662,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 667,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 669,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 672,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 676,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 677,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 678,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 680,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 683,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 686,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 687,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 688,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 696,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 698,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 700,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 701,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 709,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 713,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 716,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 719,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 723,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 725,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 726,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 727,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 730,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 739,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 741,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 743,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 748,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 501,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 757,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 502,
+                "name": "",
+                "status": "INACTIVE"
+            },
+            {
+                "id": 758,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 759,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 505,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 506,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 507,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 508,
+                "name": "",
+                "status": "ACTIVE"
+            },
+            {
+                "id": 510,
+                "name": "",
+                "status": "ACTIVE"
+            }
+        ]
 }

@@ -13,7 +13,8 @@ export default createStore({
       }
     ],
     gen20x: [],
-    ntg: []
+    ntg: [],
+    services: []
   },
   getters: {
   },
@@ -23,6 +24,9 @@ export default createStore({
     },
     SET_NTG(state, info) {
       state.ntg = info;
+    },
+    SET_SERV(state, info) {
+      state.services = info;
     },
   },
   actions: {
@@ -48,6 +52,17 @@ export default createStore({
         console.log(error);
       }
     },
+    async fetchServices({ commit }) {
+      try {
+        const data = await axios.get(
+          "http://localhost:3000/W1K2140041Z900026"
+        );
+        commit("SET_SERV", data.data);
+      } catch (error) {
+        alert(error);
+        console.log(error);
+      }
+    }
   },
   modules: {
   }
