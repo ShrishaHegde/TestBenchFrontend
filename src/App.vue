@@ -9,18 +9,12 @@
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
           </ul>
       </div>
     <div class="dropdown me-4">
       <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
         data-bs-toggle="dropdown" aria-expanded="false">
-        <span class="d-none d-sm-inline mx-1">Shrisha</span>
+        <span class="d-none d-sm-inline mx-1">Admin</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
         <li><a class="dropdown-item" href="#">Settings</a></li>
@@ -62,6 +56,7 @@
 .nav-link {
   position: relative;
   padding-bottom: 5px; /* Adjust the height of the underline as needed */
+  color: aliceblue;
 }
 .nav-link::after {
   content: "";

@@ -66,7 +66,8 @@
                   <p class="card-text">Software Version : {{ card.SwVersion }}</p>
                   <p class="card-text">Region:{{ card.region }}</p>
                   <div class="buttons">
-                    <button type="button"  class="btn btn-primary" @click="fetchServices">Services</button>
+                    <router-link :to="{ name: 'about' }" style="text-decoration: none; color: inherit;">
+                    <button type="button"  class="btn btn-primary" @click="fetchServices">Services</button></router-link>
                   </div>
                 </div>
               </div>
@@ -121,6 +122,10 @@
                 <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
                 <p class="card-text">{{ card.vin }}</p>
               </div>
+              <div class="buttons">
+                <button type="button" class="btn btn-primary" >Book</button>
+                <button type="button" class="btn btn-primary" >Status</button>
+              </div>
             </div>
           </template>
           <template v-slot:back>
@@ -131,16 +136,16 @@
                 <p class="card-text">Software Version : {{ card.SwVersion }}</p>
                 <p class="card-text">Region:{{ card.region }}</p>
               </div>
+              <div class="buttons">
+                <router-link :to="{ name: 'about' }" style="text-decoration: none; color: inherit;">
+                <button type="button"  class="btn btn-primary" @click="fetchServices">Services</button></router-link>
+              </div>
             </div>
           </template>
         </vue-flip>
       </div>
       </div>
     </div>
-  </div>
-
-  <div v-for="service in services" :key="service">
-    {{ service.id }}
   </div>
 </template>
 

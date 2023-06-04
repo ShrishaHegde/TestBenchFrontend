@@ -32,40 +32,8 @@
             "Cubicle": "B03-136",
             "SwVersion": "374.04",
             "connected": false
-        },
-        {
-            "vin": "W1K2140041Z900023",
-            "region": "AMAP",
-            "gen": "Gen20x",
-            "version": "i3",
-            "release": "FUP2",
-            "stage": "prod",
-            "Cubicle": "B03-136",
-            "SwVersion": "374.04",
-            "connected": false
-        },
-        {
-            "vin": "W1K2140041Z900023",
-            "region": "AMAP",
-            "gen": "Gen20x",
-            "version": "i3",
-            "release": "FUP2",
-            "stage": "prod",
-            "Cubicle": "B03-136",
-            "SwVersion": "374.04",
-            "connected": false
-        },
-        {
-            "vin": "W1K2140041Z900023",
-            "region": "AMAP",
-            "gen": "Gen20x",
-            "version": "i3",
-            "release": "FUP2",
-            "stage": "prod",
-            "Cubicle": "B03-136",
-            "SwVersion": "374.04",
-            "connected": false
         }
+        
     ],
     "ntg": [
         {
@@ -105,522 +73,522 @@
     "W1K2140041Z900026": [
             {
                 "id": 512,
-                "name": "",
+                "name": "abc",
                 "status": "ACTIVE"
             },
             {
                 "id": 2,
-                "name": "",
+                "name": "cve",
                 "status": "ACTIVE"
             },
             {
                 "id": 515,
-                "name": "",
+                "name": "ade",
                 "status": "ACTIVE"
             },
             {
                 "id": 3,
-                "name": "",
+                "name": "qwe",
                 "status": "INACTIVE"
             },
             {
                 "id": 516,
-                "name": "",
+                "name": "rty",
                 "status": "ACTIVE"
             },
             {
                 "id": 775,
-                "name": "",
+                "name": "uio",
                 "status": "INACTIVE"
             },
             {
                 "id": 780,
-                "name": "",
+                "name": "opa",
                 "status": "ACTIVE"
             },
             {
                 "id": 784,
-                "name": "",
+                "name": "sdf",
                 "status": "ACTIVE"
             },
             {
                 "id": 785,
-                "name": "",
+                "name": "ghj",
                 "status": "ACTIVE"
             },
             {
                 "id": 530,
-                "name": "",
+                "name": "klz",
                 "status": "ACTIVE"
             },
             {
                 "id": 531,
-                "name": "",
+                "name": "xcv",
                 "status": "ACTIVE"
             },
             {
                 "id": 787,
-                "name": "",
+                "name": "bnm",
                 "status": "INACTIVE"
             },
             {
                 "id": 532,
-                "name": "",
+                "name": "qaz",
                 "status": "INACTIVE"
             },
             {
                 "id": 533,
-                "name": "",
+                "name": "wsx",
                 "status": "INACTIVE"
             },
             {
                 "id": 534,
-                "name": "",
+                "name": "edc",
                 "status": "INACTIVE"
             },
             {
                 "id": 790,
-                "name": "",
+                "name": "rfv",
                 "status": "INACTIVE"
             },
             {
                 "id": 537,
-                "name": "",
+                "name": "tgb",
                 "status": "ACTIVE"
             },
             {
                 "id": 793,
-                "name": "",
+                "name": "yhn",
                 "status": "INACTIVE"
             },
             {
                 "id": 794,
-                "name": "",
+                "name": "ujm",
                 "status": "ACTIVE"
             },
             {
                 "id": 796,
-                "name": "",
+                "name": "ijn",
                 "status": "ACTIVE"
             },
             {
                 "id": 799,
-                "name": "",
+                "name": "okm",
                 "status": "INACTIVE"
             },
             {
                 "id": 544,
-                "name": "",
+                "name": "plm",
                 "status": "ACTIVE"
             },
             {
                 "id": 800,
-                "name": "",
+                "name": "lpm",
                 "status": "INACTIVE"
             },
             {
                 "id": 550,
-                "name": "",
+                "name": "qsc",
                 "status": "ACTIVE"
             },
             {
                 "id": 41,
-                "name": "",
+                "name": "wdv",
                 "status": "ACTIVE"
             },
             {
                 "id": 809,
-                "name": "",
+                "name": "efb",
                 "status": "ACTIVE"
             },
             {
                 "id": 561,
-                "name": "",
+                "name": "charging",
                 "status": "ACTIVE"
             },
             {
                 "id": 817,
-                "name": "",
+                "name": "mercedesme",
                 "status": "INACTIVE"
             },
             {
                 "id": 819,
-                "name": "",
+                "name": "routing",
                 "status": "INACTIVE"
             },
             {
                 "id": 822,
-                "name": "",
+                "name": "parking",
                 "status": "ACTIVE"
             },
             {
                 "id": 823,
-                "name": "",
+                "name": "ccda",
                 "status": "INACTIVE"
             },
             {
                 "id": 828,
-                "name": "",
+                "name": "lmp",
                 "status": "ACTIVE"
             },
             {
                 "id": 574,
-                "name": "",
+                "name": "mfs",
                 "status": "ACTIVE"
             },
             {
                 "id": 576,
-                "name": "",
+                "name": "starfish",
                 "status": "ACTIVE"
             },
             {
                 "id": 839,
-                "name": "",
+                "name": "citytocar",
                 "status": "INACTIVE"
             },
             {
                 "id": 840,
-                "name": "",
+                "name": "acd",
                 "status": "ACTIVE"
             },
             {
                 "id": 842,
-                "name": "",
+                "name": "aef",
                 "status": "ACTIVE"
             },
             {
                 "id": 844,
-                "name": "",
+                "name": "agh",
                 "status": "ACTIVE"
             },
             {
                 "id": 847,
-                "name": "",
+                "name": "ahi",
                 "status": "ACTIVE"
             },
             {
                 "id": 592,
-                "name": "",
+                "name": "ajk",
                 "status": "INACTIVE"
             },
             {
                 "id": 848,
-                "name": "",
+                "name": "akm",
                 "status": "INACTIVE"
             },
             {
                 "id": 593,
-                "name": "",
+                "name": "akn",
                 "status": "INACTIVE"
             },
             {
                 "id": 852,
-                "name": "",
+                "name": "akb",
                 "status": "ACTIVE"
             },
             {
                 "id": 853,
-                "name": "",
+                "name": "bcd",
                 "status": "ACTIVE"
             },
             {
                 "id": 855,
-                "name": "",
+                "name": "bde",
                 "status": "INACTIVE"
             },
             {
                 "id": 856,
-                "name": "",
+                "name": "bfg",
                 "status": "INACTIVE"
             },
             {
                 "id": 606,
-                "name": "",
+                "name": "bgh",
                 "status": "ACTIVE"
             },
             {
                 "id": 863,
-                "name": "",
+                "name": "bji",
                 "status": "ACTIVE"
             },
             {
                 "id": 864,
-                "name": "",
+                "name": "bkl",
                 "status": "ACTIVE"
             },
             {
                 "id": 866,
-                "name": "",
+                "name": "bnm",
                 "status": "INACTIVE"
             },
             {
                 "id": 867,
-                "name": "",
+                "name": "blp",
                 "status": "ACTIVE"
             },
             {
                 "id": 870,
-                "name": "",
+                "name": "bbb",
                 "status": "ACTIVE"
             },
             {
                 "id": 620,
-                "name": "",
+                "name": "aaa",
                 "status": "INACTIVE"
             },
             {
                 "id": 622,
-                "name": "",
+                "name": "ccc",
                 "status": "ACTIVE"
             },
             {
                 "id": 624,
-                "name": "",
+                "name": "ddd",
                 "status": "INACTIVE"
             },
             {
                 "id": 627,
-                "name": "",
+                "name": "eee",
                 "status": "ACTIVE"
             },
             {
                 "id": 630,
-                "name": "",
+                "name": "fff",
                 "status": "ACTIVE"
             },
             {
                 "id": 636,
-                "name": "",
+                "name": "ggg",
                 "status": "ACTIVE"
             },
             {
                 "id": 638,
-                "name": "",
+                "name": "hhh",
                 "status": "ACTIVE"
             },
             {
                 "id": 641,
-                "name": "",
+                "name": "iii",
                 "status": "INACTIVE"
             },
             {
                 "id": 650,
-                "name": "",
+                "name": "kkk",
                 "status": "INACTIVE"
             },
             {
                 "id": 652,
-                "name": "",
+                "name": "mmm",
                 "status": "ACTIVE"
             },
             {
                 "id": 655,
-                "name": "",
+                "name": "nnn",
                 "status": "ACTIVE"
             },
             {
                 "id": 658,
-                "name": "",
+                "name": "ooo",
                 "status": "ACTIVE"
             },
             {
                 "id": 659,
-                "name": "",
+                "name": "ppp",
                 "status": "ACTIVE"
             },
             {
                 "id": 662,
-                "name": "",
+                "name": "qqq",
                 "status": "INACTIVE"
             },
             {
                 "id": 667,
-                "name": "",
+                "name": "rrr",
                 "status": "ACTIVE"
             },
             {
                 "id": 669,
-                "name": "",
+                "name": "sss",
                 "status": "ACTIVE"
             },
             {
                 "id": 672,
-                "name": "",
+                "name": "ttt",
                 "status": "ACTIVE"
             },
             {
                 "id": 676,
-                "name": "",
+                "name": "uuu",
                 "status": "ACTIVE"
             },
             {
                 "id": 677,
-                "name": "",
+                "name": "vvv",
                 "status": "ACTIVE"
             },
             {
                 "id": 678,
-                "name": "",
+                "name": "www",
                 "status": "ACTIVE"
             },
             {
                 "id": 680,
-                "name": "",
+                "name": "xxx",
                 "status": "ACTIVE"
             },
             {
                 "id": 683,
-                "name": "",
+                "name": "yyy",
                 "status": "ACTIVE"
             },
             {
                 "id": 686,
-                "name": "",
+                "name": "zzz",
                 "status": "ACTIVE"
             },
             {
                 "id": 687,
-                "name": "",
+                "name": "aab",
                 "status": "ACTIVE"
             },
             {
                 "id": 688,
-                "name": "",
+                "name": "aac",
                 "status": "ACTIVE"
             },
             {
                 "id": 696,
-                "name": "",
+                "name": "aad",
                 "status": "INACTIVE"
             },
             {
                 "id": 698,
-                "name": "",
+                "name": "aae",
                 "status": "ACTIVE"
             },
             {
                 "id": 700,
-                "name": "",
+                "name": "aaf",
                 "status": "ACTIVE"
             },
             {
                 "id": 701,
-                "name": "",
+                "name": "aag",
                 "status": "ACTIVE"
             },
             {
                 "id": 709,
-                "name": "",
+                "name": "aah",
                 "status": "ACTIVE"
             },
             {
                 "id": 713,
-                "name": "",
+                "name": "aai",
                 "status": "ACTIVE"
             },
             {
                 "id": 716,
-                "name": "",
+                "name": "aak",
                 "status": "ACTIVE"
             },
             {
                 "id": 719,
-                "name": "",
+                "name": "aal",
                 "status": "ACTIVE"
             },
             {
                 "id": 723,
-                "name": "",
+                "name": "aaz",
                 "status": "ACTIVE"
             },
             {
                 "id": 725,
-                "name": "",
+                "name": "bbc",
                 "status": "ACTIVE"
             },
             {
                 "id": 726,
-                "name": "",
+                "name": "bbd",
                 "status": "ACTIVE"
             },
             {
                 "id": 727,
-                "name": "",
+                "name": "bbf",
                 "status": "ACTIVE"
             },
             {
                 "id": 730,
-                "name": "",
+                "name": "bbe",
                 "status": "ACTIVE"
             },
             {
                 "id": 739,
-                "name": "",
+                "name": "bbg",
                 "status": "ACTIVE"
             },
             {
                 "id": 741,
-                "name": "",
+                "name": "bbj",
                 "status": "ACTIVE"
             },
             {
                 "id": 743,
-                "name": "",
+                "name": "bbi",
                 "status": "ACTIVE"
             },
             {
                 "id": 748,
-                "name": "",
+                "name": "bbl",
                 "status": "INACTIVE"
             },
             {
                 "id": 501,
-                "name": "",
+                "name": "bbm",
                 "status": "INACTIVE"
             },
             {
                 "id": 757,
-                "name": "",
+                "name": "bbv",
                 "status": "ACTIVE"
             },
             {
                 "id": 502,
-                "name": "",
+                "name": "bbz",
                 "status": "INACTIVE"
             },
             {
                 "id": 758,
-                "name": "",
+                "name": "bbp",
                 "status": "ACTIVE"
             },
             {
                 "id": 759,
-                "name": "",
+                "name": "bbu",
                 "status": "ACTIVE"
             },
             {
                 "id": 505,
-                "name": "",
+                "name": "bby",
                 "status": "ACTIVE"
             },
             {
                 "id": 506,
-                "name": "",
+                "name": "bbx",
                 "status": "ACTIVE"
             },
             {
                 "id": 507,
-                "name": "",
+                "name": "bbt",
                 "status": "ACTIVE"
             },
             {
                 "id": 508,
-                "name": "",
+                "name": "cca",
                 "status": "ACTIVE"
             },
             {
                 "id": 510,
-                "name": "",
+                "name": "ccd",
                 "status": "ACTIVE"
             }
         ]
