@@ -13,8 +13,8 @@
     <div v-if="showGen20x">
 
       <div class="filters">
-        Version
-        <select v-model="gen.version">
+        Variant
+        <select v-model="gen.variant">
           <option value="">All</option>
           <option value="i2">i2</option>
           <option value="i3">i3</option>
@@ -24,21 +24,37 @@
         <select v-model="gen.release">
           <option value="">All</option>
           <option value="SOP">SOP</option>
-          <option value="FUP1">FUP1</option>
-          <option value="FUP2">FUP2</option>
+          <option value="FUP1">FUP2</option>
+          <option value="FUP2">FUP3</option>
         </select>
         Stage
         <select v-model="gen.stage">
           <option value="">All</option>
-          <option value="prod">Prod</option>
-          <option value="non-prod">Non Prod</option>
+          <option value="PROD">PROD</option>
+          <option value="NONPROD">NONPROD</option>
         </select>
         Region
         <select v-model="gen.region">
           <option value="">All</option>
-          <option value="EMEA">EMEA</option>
-          <option value="AMAP">AMAP</option>
-          <option value="CHINA">CHINA</option>
+          <option value="ECE">ECE</option>
+          <option value="NAM">NAM</option>
+          <option value="USA">USA</option>
+        </select>
+        Version
+        <select v-model="gen.version">
+          <option value="">All</option>
+          <option value="E871.103">E871.103</option>
+          <option value="E905.320">E905.320</option>
+          <option value="E905.404">"E905.404</option>
+          <option value="DK">Dk</option>
+          <option value="E330.601">E330.601</option>
+          <option value="E444.600">E444.600</option>
+          <option value="E023.100">E023.100</option>
+          <option value="E444.303">E444.303</option>
+          <option value="E52.5">E52.5</option>
+          <option value="E049.0_674">E049.0_674</option>
+          <option value="E051.5_1066">E051.5_1066</option>
+          <option value="E052.5_1341">E052.5_1341</option>
         </select>
       </div>
       <div class="row">
@@ -82,8 +98,8 @@
     <div v-if="showNtg">
 
       <div class="filters">
-        Version
-        <select v-model="nt.version">
+        Variant
+        <select v-model="nt.variant">
           <option value="">All</option>
           <option value="5">5</option>
           <option value="5.5">5.5</option>
@@ -94,21 +110,37 @@
         <select v-model="nt.release">
           <option value="">All</option>
           <option value="SOP">SOP</option>
-          <option value="FUP1">FUP1</option>
-          <option value="FUP2">FUP2</option>
+          <option value="FUP1">FUP2</option>
+          <option value="FUP2">FUP3</option>
         </select>
         Stage
         <select v-model="nt.stage">
           <option value="">All</option>
-          <option value="prod">Prod</option>
-          <option value="non-prod">Non Prod</option>
+          <option value="PROD">PROD</option>
+          <option value="NONPROD">NONPROD</option>
         </select>
         Region
         <select v-model="nt.region">
           <option value="">All</option>
-          <option value="EMEA">EMEA</option>
-          <option value="AMAP">AMAP</option>
-          <option value="CHINA">CHINA</option>
+          <option value="ECE">ECE</option>
+          <option value="NAM">NAM</option>
+          <option value="USA">USA</option>
+        </select>
+        Version
+        <select v-model="nt.version">
+          <option value="">All</option>
+          <option value="E871.103">E871.103</option>
+          <option value="E905.320">E905.320</option>
+          <option value="E905.404">"E905.404</option>
+          <option value="DK">Dk</option>
+          <option value="E330.601">E330.601</option>
+          <option value="E444.600">E444.600</option>
+          <option value="E023.100">E023.100</option>
+          <option value="E444.303">E444.303</option>
+          <option value="E52.5">E52.5</option>
+          <option value="E049.0_674">E049.0_674</option>
+          <option value="E051.5_1066">E051.5_1066</option>
+          <option value="E052.5_1341">E052.5_1341</option>
         </select>
       </div>
       <div class="row">
@@ -162,16 +194,18 @@ export default {
       showGen20x: false,
       showNtg: false,
       gen: {
-        version: "",
+        variant: "",
         release: "",
         stage: "",
-        region: ""
+        region: "",
+        version:""
       },
       nt: {
-        version: "",
+        variant: "",
         release: "",
         stage: "",
-        region: ""
+        region: "",
+        version:""
       }
 
     }
@@ -210,21 +244,24 @@ export default {
       return this.$store.state.ntg;
     },
     filteredGen20x() {
+      const variant = this.gen.variant.toLowerCase();
       const version = this.gen.version.toLowerCase();
       const release = this.gen.release.toLowerCase();
       const stage = this.gen.stage.toLowerCase();
       const region = this.gen.region.toLowerCase();
       return this.gen20x.filter(card => {
-        return card.version.toLowerCase().includes(version) & card.release.toLowerCase().includes(release) & card.stage.toLowerCase().startsWith(stage) & card.region.toLowerCase().includes(region);
+        return card.SwVersion.toLowerCase().includes(version) & card.version.toLowerCase().includes(variant) & card.release.toLowerCase().includes(release) & card.stage.toLowerCase().startsWith(stage) & card.region.toLowerCase().includes(region);
       });
     },
     filteredNtg() {
+      const variant = this.gen.variant.toLowerCase();
       const version = this.nt.version.toLowerCase();
       const release = this.nt.release.toLowerCase();
       const stage = this.nt.stage.toLowerCase();
       const region = this.nt.region.toLowerCase();
       return this.ntg.filter(card => {
-        return card.version.toLowerCase().includes(version) & card.release.toLowerCase().includes(release) & card.stage.toLowerCase().startsWith(stage) & card.region.toLowerCase().includes(region);
+        return card.SwVersion.toLowerCase().includes(version) & card.version.toLowerCase().includes(variant) & card.release.toLowerCase().includes(release) & card.stage.toLowerCase().startsWith(stage) & card.region.toLowerCase().includes(region);
+
       });
     },
     services() {

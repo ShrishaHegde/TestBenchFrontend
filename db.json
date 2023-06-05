@@ -1,595 +1,280 @@
 {
     "gen20x": [
         {
-            "vin": "W1K2140041Z900021",
-            "region": "EMEA",
+            "vin": "WYA2140541Z900168",
+            "region": "ECE",
             "gen": "Gen20x",
             "version": "i2",
             "release": "SOP",
-            "stage": "non-prod",
-            "Cubicle": "B03-135",
-            "SwVersion": "344.0",
+            "stage": "NONPROD",
+            "Cubicle": "MFS LAB",
+            "SwVersion": "E52.5",
             "connected": true
         },
         {
-            "vin": "W1K2140041Z900022",
-            "region": "AMAP",
+            "vin": "W1K2140041Z900021",
+            "region": "ECE",
             "gen": "Gen20x",
-            "version": "i3",
-            "release": "FUP1",
-            "stage": "prod",
-            "Cubicle": "B03-136",
-            "SwVersion": "374.04",
-            "connected": true
-        },
-        {
-            "vin": "W1K2140041Z900023",
-            "region": "AMAP",
-            "gen": "Gen20x",
-            "version": "i3",
-            "release": "FUP2",
-            "stage": "prod",
-            "Cubicle": "B03-136",
-            "SwVersion": "374.04",
+            "version": "i2",
+            "release": "SOP",
+            "stage": "NONPROD",
+            "Cubicle": "DK",
+            "SwVersion": "E049.0_674",
             "connected": false
+        },
+        {
+            "vin": "W1K2140611Z900027",
+            "region": "ECE",
+            "gen": "Gen20x",
+            "version": "i2",
+            "release": "SOP",
+            "stage": "NONPROD",
+            "Cubicle": "DK",
+            "SwVersion": "E051.5_1066",
+            "connected": false
+        },
+        {
+            "vin": "WYA2140541Z970022",
+            "region": "USA",
+            "gen": "Gen20x",
+            "version": "i2",
+            "release": "SOP",
+            "stage": "NONPROD",
+            "Cubicle": "MFS LAB",
+            "SwVersion": "E052.5_1341",
+            "connected": true
         }
-        
     ],
+     
+        
+    
     "ntg": [
         {
-            "vin": "W1K2140041Z900024",
-            "region": "AMAP",
+            "vin":"W1V9076331Z900103",
+            "region":"ECE",
+            "gen":"NTG",
+            "version":"6",
+            "release":"FUP4",
+            "stage":"NONPROD",
+            "Cubicle":"DK",
+            "SwVersion":"E905.319",
+            "connected":false
+        },
+        {
+            "vin":"WDD1671337M010199",
+            "region":"ECE",
+            "gen":"NTG",
+            "version":"6",
+            "release":"FUP3",
+            "stage":"NONPROD",
+            "Cubicle":"MFS LAB",
+            "SwVersion":"E871.103",
+            "connected":false
+        },
+        {
+            "vin": "W1K2938901Z990008",
+            "region": "ECE",
             "gen": "NTG",
-            "version": "7",
-            "release": "FUP2",
-            "stage": "prod",
-            "Cubicle": "B03-123",
-            "SwVersion": "333.09",
+            "version": "6",
+            "release": "FUP4",
+            "stage": "NONPROD",
+            "Cubicle": "MFS LAB",
+            "SwVersion": "E905.320",
+            "connected": false
+        },
+        {
+            "vin": "W1K293801Z9900003",
+            "region": "ECE",
+            "gen": "NTG",
+            "version": "6",
+            "release": "FUP4",
+            "stage": "NONPROD",
+            "Cubicle": "MFS LAB",
+            "SwVersion": "E905.404",
             "connected": true
         },
         {
-            "vin": "W1K2140041Z900025",
-            "region": "CHINA",
+            "vin": "WDD2938901Z010233",
+            "region": "NAM",
+            "gen": "NTG",
+            "version": "6",
+            "release": "FUP4",
+            "stage": "NONPROD",
+            "Cubicle": "MFS LAB",
+            "SwVersion": "E905.404",
+            "connected": true
+        },
+        {
+            "vin": "WDD2938901Z000029",
+            "region": "ECE",
             "gen": "NTG",
             "version": "6",
             "release": "SOP",
-            "stage": "non-prod",
-            "Cubicle": "B03-231",
-            "SwVersion": "323.19",
+            "stage": "NONPROD",
+            "Cubicle": "DK",
+            "SwVersion": "DK",
+            "connected": false
+        },
+        {
+            "vin": "WDD3F8HB9LZ000021",
+            "region": "ECE",
+            "gen": "NTG",
+            "version": "6",
+            "release": "SOP",
+            "stage": "NONPROD",
+            "Cubicle": "DK",
+            "SwVersion": "DK",
+            "connected": false
+        },
+        {
+            "vin": "WDD2231821Z100270",
+            "region": "ECE",
+            "gen": "NTG",
+            "version": "7",
+            "release": "FUP3",
+            "stage": "NONPROD",
+            "Cubicle": "DK",
+            "SwVersion": "E330.601",
+            "connected": false
+        },
+        {
+            "vin": "WDD2231821Z000605",
+            "region": "ECE",
+            "gen": "NTG",
+            "version": "7",
+            "release": "FUP4",
+            "stage": "NONPROD",
+            "Cubicle": "MFS LAB",
+            "SwVersion": "E444.600",
             "connected": true
         },
         {
-            "vin": "W1K2140041Z900026",
-            "region": "EMEA",
+            "vin": "WDD2971231Z500152",
+            "region": "ECE",
             "gen": "NTG",
-            "version": "5.5",
-            "release": "FUP1",
-            "stage": "non-prod",
-            "Cubicle": "B03-233",
-            "SwVersion": "378.1",
+            "version": "7",
+            "release": "FUP4",
+            "stage": "NONPROD",
+            "Cubicle": "DK",
+            "SwVersion": "E444.600",
+            "connected": false
+        },
+        {
+            "vin": "W1K2971231Z990002",
+            "region": "ECE",
+            "gen": "NTG",
+            "version": "7",
+            "release": "SOP",
+            "stage": "PROD",
+            "Cubicle": "DK",
+            "SwVersion": "E023.100",
+            "connected": false
+        },
+        {
+            "vin": "WDD2231821Z000617",
+            "region": "USA",
+            "gen": "NTG",
+            "version": "7",
+            "release": "FUP4",
+            "stage": "NONPROD",
+            "Cubicle": "MFS LAB",
+            "SwVersion": "E444.600",
             "connected": true
+        },
+        {
+            "vin": "W1K2231821Z998466",
+            "region": "USA",
+            "gen": "NTG",
+            "version": "7",
+            "release": "FUP4",
+            "stage": "NONPROD",
+            "Cubicle": "MFS LAB ",
+            "SwVersion": "E444.303",
+            "connected": true
+        },
+        {
+            "vin": "4JGDM4EB6PZ970011",
+            "region": "ECE",
+            "gen": "NTG",
+            "version": "7",
+            "release": "SOP",
+            "stage": "NONPROD",
+            "Cubicle": "DK",
+            "SwVersion": "DK",
+            "connected": false
+        },
+        {
+            "vin": "WDD6G6BB5NZ900007",
+            "region": "USA",
+            "gen": "NTG",
+            "version": "7",
+            "release": "SOP",
+            "stage": "NONPROD",
+            "Cubicle": "DK",
+            "SwVersion": "DK",
+            "connected": false
         }
     ],
     "W1K2140041Z900026": [
             {
                 "id": 512,
-                "name": "abc",
+                "name": "Parking",
                 "status": "ACTIVE"
             },
             {
                 "id": 2,
-                "name": "cve",
+                "name": "Charging",
                 "status": "ACTIVE"
             },
             {
                 "id": 515,
-                "name": "ade",
+                "name": "Routing",
                 "status": "ACTIVE"
             },
             {
                 "id": 3,
-                "name": "qwe",
+                "name": "Navigation",
                 "status": "INACTIVE"
             },
             {
                 "id": 516,
-                "name": "rty",
+                "name": "Mercedes Me",
                 "status": "ACTIVE"
             },
             {
                 "id": 775,
-                "name": "uio",
+                "name": "Mercedes In",
                 "status": "INACTIVE"
             },
             {
                 "id": 780,
-                "name": "opa",
+                "name": "RPA",
                 "status": "ACTIVE"
             },
             {
                 "id": 784,
-                "name": "sdf",
+                "name": "My Star",
                 "status": "ACTIVE"
             },
             {
                 "id": 785,
-                "name": "ghj",
+                "name": "AVP",
                 "status": "ACTIVE"
             },
             {
                 "id": 530,
-                "name": "klz",
+                "name": "PUBG",
                 "status": "ACTIVE"
             },
             {
                 "id": 531,
-                "name": "xcv",
+                "name": "MCV",
                 "status": "ACTIVE"
             },
             {
                 "id": 787,
-                "name": "bnm",
+                "name": "AMG",
                 "status": "INACTIVE"
-            },
-            {
-                "id": 532,
-                "name": "qaz",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 533,
-                "name": "wsx",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 534,
-                "name": "edc",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 790,
-                "name": "rfv",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 537,
-                "name": "tgb",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 793,
-                "name": "yhn",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 794,
-                "name": "ujm",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 796,
-                "name": "ijn",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 799,
-                "name": "okm",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 544,
-                "name": "plm",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 800,
-                "name": "lpm",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 550,
-                "name": "qsc",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 41,
-                "name": "wdv",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 809,
-                "name": "efb",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 561,
-                "name": "charging",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 817,
-                "name": "mercedesme",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 819,
-                "name": "routing",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 822,
-                "name": "parking",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 823,
-                "name": "ccda",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 828,
-                "name": "lmp",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 574,
-                "name": "mfs",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 576,
-                "name": "starfish",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 839,
-                "name": "citytocar",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 840,
-                "name": "acd",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 842,
-                "name": "aef",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 844,
-                "name": "agh",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 847,
-                "name": "ahi",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 592,
-                "name": "ajk",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 848,
-                "name": "akm",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 593,
-                "name": "akn",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 852,
-                "name": "akb",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 853,
-                "name": "bcd",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 855,
-                "name": "bde",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 856,
-                "name": "bfg",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 606,
-                "name": "bgh",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 863,
-                "name": "bji",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 864,
-                "name": "bkl",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 866,
-                "name": "bnm",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 867,
-                "name": "blp",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 870,
-                "name": "bbb",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 620,
-                "name": "aaa",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 622,
-                "name": "ccc",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 624,
-                "name": "ddd",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 627,
-                "name": "eee",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 630,
-                "name": "fff",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 636,
-                "name": "ggg",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 638,
-                "name": "hhh",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 641,
-                "name": "iii",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 650,
-                "name": "kkk",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 652,
-                "name": "mmm",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 655,
-                "name": "nnn",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 658,
-                "name": "ooo",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 659,
-                "name": "ppp",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 662,
-                "name": "qqq",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 667,
-                "name": "rrr",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 669,
-                "name": "sss",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 672,
-                "name": "ttt",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 676,
-                "name": "uuu",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 677,
-                "name": "vvv",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 678,
-                "name": "www",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 680,
-                "name": "xxx",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 683,
-                "name": "yyy",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 686,
-                "name": "zzz",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 687,
-                "name": "aab",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 688,
-                "name": "aac",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 696,
-                "name": "aad",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 698,
-                "name": "aae",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 700,
-                "name": "aaf",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 701,
-                "name": "aag",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 709,
-                "name": "aah",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 713,
-                "name": "aai",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 716,
-                "name": "aak",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 719,
-                "name": "aal",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 723,
-                "name": "aaz",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 725,
-                "name": "bbc",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 726,
-                "name": "bbd",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 727,
-                "name": "bbf",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 730,
-                "name": "bbe",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 739,
-                "name": "bbg",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 741,
-                "name": "bbj",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 743,
-                "name": "bbi",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 748,
-                "name": "bbl",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 501,
-                "name": "bbm",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 757,
-                "name": "bbv",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 502,
-                "name": "bbz",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 758,
-                "name": "bbp",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 759,
-                "name": "bbu",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 505,
-                "name": "bby",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 506,
-                "name": "bbx",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 507,
-                "name": "bbt",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 508,
-                "name": "cca",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 510,
-                "name": "ccd",
-                "status": "ACTIVE"
             }
         ]
 }

@@ -1,23 +1,46 @@
 <template>
-  <div class="search-bar">
-    <input type="text" class="bg-gray-300 w-50 px-4 py-2" autocomplete="off" v-model="searchQuery" >
-    <button type="button" class="btn btn-primary">Search</button>
-  </div>
-  <div v-for="service in filterServices" :key="service">
-    {{ service.name }}
-  </div>
+<div class="serv" style="height: 500px">
+  <ag-grid-vue
+  style="width: 50%; height: 100%;"
+  class="ag-theme-alpine"
+  :columnDefs="columnDefs" 
+  :rowData="this.services"
+  :pagination="true"
+  :paginationPageSize=20
+  :defaultColDef="defaultColDef"
+></ag-grid-vue>
+</div>
+
+  
 </template>
 
 <script>
+
+import {AgGridVue} from 'ag-grid-vue3'
+import 'ag-grid-community/styles/ag-grid.css'
+import 'ag-grid-community/styles/ag-theme-alpine.css'
 export default {
   name: "about",
+  components: {
+    AgGridVue,
+  },
   data() {
     return {
-      searchQuery: ''
+      searchQuery: '',
+      columnDefs: [
+        { field: 'id' },
+        { field: 'name' },
+        { field: 'status' }
+      ],
+      defaultColDef: {
+        filter: true,
+        sortable: true,
+      },
     }
   },
   methods: {
     fetchServices() {
+      console.log(this.services)
       this.$store.dispatch("fetchServices");
     },
   },

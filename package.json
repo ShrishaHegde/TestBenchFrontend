@@ -7,6 +7,8 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "ag-grid-community": "^29.3.5",
+    "ag-grid-vue3": "^29.3.5",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "core-js": "^3.8.3",
