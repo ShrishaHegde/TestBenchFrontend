@@ -1,15 +1,15 @@
 <template>
     <div class="stages">
-      <div class="pentagon" :class="{ active: currentStage === 'gen20xi2' }" @click="changeCurrentStage('gen20xi2')">
+      <div class="pentagon" :class="{ active: currentStage === 'Gen20x/i2' }" @click="changeCurrentStage('Gen20x/i2')">
         <span class="text">Gen20X.i2</span>
       </div>
-      <div class="pentagon" :class="{ active: currentStage === 'gen20xi3' }" @click="changeCurrentStage('gen20xi3')">
+      <div class="pentagon" :class="{ active: currentStage === 'Gen20x/i3' }" @click="changeCurrentStage('Gen20x/i3')">
         <span class="text">Gen20X.i3</span>
       </div>
-      <div class="pentagon" :class="{ active: currentStage === 'ntg6' }" @click="changeCurrentStage('ntg6')">
+      <div class="pentagon" :class="{ active: currentStage === 'NTG/NTG6' }" @click="changeCurrentStage('NTG/NTG6')">
         <span class="text">NTG6</span>
       </div>
-      <div class="pentagon" :class="{ active: currentStage === 'ntg7' }" @click="changeCurrentStage('ntg7')">
+      <div class="pentagon" :class="{ active: currentStage === 'NTG/NTG7' }" @click="changeCurrentStage('NTG/NTG7')">
         <span class="text">NTG7</span>
       </div>
       <div class="search-bar">
@@ -69,9 +69,9 @@
       <div class="row">
         <div class="col" v-for="card in filteredDetails" :key="card.vin">
           <div class="card" style="width: 18rem;margin:30px">
-            <div class="card-body">
+            <div class="card-body gradient-custom">
               <div class="rowed">
-                <h5 class="card-title">{{ card.gen }}.{{ card.version }}</h5>
+                <h5 class="card-title">{{ card.gen }}.{{ card.variant }}</h5>
               <div class="status-icon">
                 <i v-if="card.connected" class="bi bi-wifi connected" style="font-size: 25px;margin-top:-2px"></i>
                 <i v-else class="bi bi-wifi-off disconnected" style="font-size: 25px;margin-top:-2px"></i>
@@ -84,25 +84,29 @@
               <p class="card-text">Software Version : {{ card.SwVersion }}</p>
               <p class="card-text">Region:{{ card.region }}</p>
               <div class="buttons">
-                <router-link :to="{ name: 'about' }" style="text-decoration: none; color: inherit;">
-                  <button type="button" class="btn btn-primary" @click="fetchServices">Services</button></router-link>
+                  <button type="button" class="btn btn-primary" @click="fetchServices(card.vin)">Services</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <popup v-if="isPopupVisible" @close="hidePopup"></popup>
     <!-- <div>{{ categories[0].supportedHeadUnitGenerations }}</div> -->
 </template>
 
 <script>
 // @ is an alias to /src
+import Popup from '../components/Popup.vue';
 export default {
   name: 'HomeView',
+  components: {
+    Popup
+  },
   data() {
     return {
-      stages: ["gen20xi2", "gen20xi3", "ntg6", "ntg7"],
-      currentStage: "gen20xi2",
+      stages: ["Gen20x/i2", "Gen20x/i3", "NTG/NTG6", "NTG/NTG7"],
+      currentStage: "Gen20x/i2",
       search: "",
       gen: {
         release: "",
@@ -116,13 +120,14 @@ export default {
         region: "",
         version: ""
       },
-      releseOptions: {}
+      releseOptions: {},
+      isPopupVisible: false
 
     }
   },
   created() {
     window.onload = () => {
-      this.$store.dispatch("fetchDetails", "gen20xi2");
+      this.$store.dispatch("fetchDetails", "Gen20x/i2");
       this.$store.dispatch("fetchCategories");
       // this.fetchDetails(); // Call your method here
     };
@@ -133,9 +138,13 @@ export default {
       this.currentStage = stage;
     },
 
-    fetchServices() {
-      this.$store.dispatch("fetchServices");
+    fetchServices(vin) {
+      this.isPopupVisible = true;
+      this.$store.dispatch("fetchServices", vin);
     },
+    hidePopup() {
+      this.isPopupVisible = false;
+    }
   },
   computed: {
 
@@ -190,6 +199,9 @@ export default {
 
 <style scoped>
 
+body {
+  background: rgba(243, 220, 179, 0.322)
+}
 .stages {
   display: flex;
   padding: 10px 300px;
@@ -224,73 +236,7 @@ export default {
 .pentagon.active::after {
   background-color: rgb(55, 55, 245);
 }
-.filters{
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-evenly;
-}
 
-.row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-}
-
-.card:hover {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.card-text {
-  border: 1px solid;
-  border-radius: 10px;
-  background: rgba(121, 204, 230, 0.24);
-}
-.card-title{
- align-self: center;
-}
-.card-body{
-  background: #dee2e69e;
-  padding-top: 0px;
-}
-
-body {
-  background: rgba(243, 220, 179, 0.322)
-}
-
-.col {
-  opacity: 0;
-  animation-name: fade-in;
-  animation-duration: 1s;
-  animation-delay: 0.1s;
-  /* Adjust the delay value as per your requirements */
-  animation-fill-mode: forwards;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.ifilter select{
-  width: 100px;
-  margin-left: 10px;
-}
-
-.rowed{
-  display: flex;
-  justify-content: space-around;
-}
-.connected{
-  color: green;
-}
-.disconnected{
-  color: red;
-}
 .form{
   position: relative;
 }
@@ -321,5 +267,84 @@ body {
   box-shadow: none;
   border: 1px solid whitesmoke;
 }
+
+.filters{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.ifilter select{
+  width: 100px;
+  margin-left: 10px;
+}
+
+
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-text {
+  border: 1px solid;
+  border-radius: 10px;
+  background: rgba(121, 204, 230, 0.24);
+}
+.card-title{
+ align-self: center;
+}
+.card-body{
+  background: #dee2e69e;
+  padding: 10px;
+  
+}
+.rowed{
+  display: flex;
+  justify-content: space-around;
+}
+
+.status-icon{
+  margin-top: -8px;
+}
+.connected{
+  color: green;
+}
+.disconnected{
+  color: red;
+}
+.col {
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-delay: 0.1s;
+  /* Adjust the delay value as per your requirements */
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #feada6;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(254,173,166,0.5), rgba(245,239,239,0.5));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(254,173,166,0.5), rgba(245,239,239,0.5))
+}
+
 
 </style>

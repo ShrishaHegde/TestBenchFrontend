@@ -21,38 +21,50 @@ export default createStore({
   },
   actions: {
     fetchDetails({ commit }, selected) {
-
-      axios.get('https://tbm-nonprod.dvb.corpinter.net/fetchDetails/Gen20x')
+      axios.get('https://tbm-nonprod.dvb.corpinter.net/fetchDetails/' + selected)
         .then(response => {
-          console.log(response.data);
-          commit("SET_DETAILS", response.data);
+          if(response.data == null){
+            commit("SET_DETAILS", []);
+          }
+          else{
+            commit("SET_DETAILS", response.data);
+          }
         })
         .catch(error => {
           console.log(error);
         });
     },
-    async fetchServices({ commit }) {
-      try {
-        const data = await axios.get(
-          "http://localhost:3000/W1K2140041Z900026"
-        );
-        commit("SET_SERV", data.data);
-      } catch (error) {
-        alert(error);
-        console.log(error);
-      }
+    fetchServices({ commit }, vin) {
+      axios.get('https://tbm-nonprod.dvb.corpinter.net/fetchAllDetails/' + vin)
+        .then(response => {
+          console.log()
+          commit("SET_SERV", response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
-    async fetchCategories({ commit }) {
-      try {
-        const data = await axios.get(
-          "http://localhost:3000/categories"
-        );
-        commit("SET_CAT", data.data);
-      } catch (error) {
-        alert(error);
-        console.log(error);
-      }
+
+    fetchCategories({ commit }) {
+      axios.get('https://tbm-nonprod.dvb.corpinter.net/fetchDetailsNew')
+        .then(response => {
+          commit("SET_CAT", response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
+    // async fetchCategories({ commit }) {
+    //   try {
+    //     const data = await axios.get(
+    //       "http://localhost:3000/categories"
+    //     );
+    //     commit("SET_CAT", data.data);
+    //   } catch (error) {
+    //     alert(error);
+    //     console.log(error);
+    //   }
+    // },
   },
   modules: {
   }

@@ -55,7 +55,7 @@ nav{
   margin: auto;
 }
 .navbar-nav.mr-auto{
-  margin-left: 430px;
+  margin-left: 350px;
 }
 
 </style>

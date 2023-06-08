@@ -1,7 +1,7 @@
 <template>
 <div class="serv" style="height: 500px">
   <ag-grid-vue
-  style="width: 50%; height: 100%;"
+  style="width: 100%; height: 100%;"
   class="ag-theme-alpine"
   :columnDefs="columnDefs" 
   :rowData="this.services"
