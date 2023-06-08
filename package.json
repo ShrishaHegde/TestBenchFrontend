@@ -7,10 +7,12 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
     "ag-grid-community": "^29.3.5",
     "ag-grid-vue3": "^29.3.5",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.5",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
     "vue-flip": "^3.0.2",

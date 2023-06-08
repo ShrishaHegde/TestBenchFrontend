@@ -1,5 +1,5 @@
 {
-    "gen20x": [
+    "gen20xi2": [
         {
             "vin": "WYA2140541Z900168",
             "region": "ECE",
@@ -45,31 +45,29 @@
             "connected": true
         }
     ],
-     
-        
-    
-    "ntg": [
+    "gen20xi3": [],
+    "ntg6": [
         {
-            "vin":"W1V9076331Z900103",
-            "region":"ECE",
-            "gen":"NTG",
-            "version":"6",
-            "release":"FUP4",
-            "stage":"NONPROD",
-            "Cubicle":"DK",
-            "SwVersion":"E905.319",
-            "connected":false
+            "vin": "W1V9076331Z900103",
+            "region": "ECE",
+            "gen": "NTG",
+            "version": "6",
+            "release": "FUP4",
+            "stage": "NONPROD",
+            "Cubicle": "DK",
+            "SwVersion": "E905.319",
+            "connected": false
         },
         {
-            "vin":"WDD1671337M010199",
-            "region":"ECE",
-            "gen":"NTG",
-            "version":"6",
-            "release":"FUP3",
-            "stage":"NONPROD",
-            "Cubicle":"MFS LAB",
-            "SwVersion":"E871.103",
-            "connected":false
+            "vin": "WDD1671337M010199",
+            "region": "ECE",
+            "gen": "NTG",
+            "version": "6",
+            "release": "FUP3",
+            "stage": "NONPROD",
+            "Cubicle": "MFS LAB",
+            "SwVersion": "E871.103",
+            "connected": false
         },
         {
             "vin": "W1K2938901Z990008",
@@ -125,7 +123,10 @@
             "Cubicle": "DK",
             "SwVersion": "DK",
             "connected": false
-        },
+        }
+    ],
+
+    "ntg7" : [
         {
             "vin": "WDD2231821Z100270",
             "region": "ECE",
@@ -216,65 +217,144 @@
         }
     ],
     "W1K2140041Z900026": [
-            {
-                "id": 512,
-                "name": "Parking",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 2,
-                "name": "Charging",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 515,
-                "name": "Routing",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 3,
-                "name": "Navigation",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 516,
-                "name": "Mercedes Me",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 775,
-                "name": "Mercedes In",
-                "status": "INACTIVE"
-            },
-            {
-                "id": 780,
-                "name": "RPA",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 784,
-                "name": "My Star",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 785,
-                "name": "AVP",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 530,
-                "name": "PUBG",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 531,
-                "name": "MCV",
-                "status": "ACTIVE"
-            },
-            {
-                "id": 787,
-                "name": "AMG",
-                "status": "INACTIVE"
-            }
-        ]
+        {
+            "id": 512,
+            "name": "Parking",
+            "status": "ACTIVE"
+        },
+        {
+            "id": 2,
+            "name": "Charging",
+            "status": "ACTIVE"
+        },
+        {
+            "id": 515,
+            "name": "Routing",
+            "status": "ACTIVE"
+        },
+        {
+            "id": 3,
+            "name": "Navigation",
+            "status": "INACTIVE"
+        },
+        {
+            "id": 516,
+            "name": "Mercedes Me",
+            "status": "ACTIVE"
+        },
+        {
+            "id": 775,
+            "name": "Mercedes In",
+            "status": "INACTIVE"
+        },
+        {
+            "id": 780,
+            "name": "RPA",
+            "status": "ACTIVE"
+        },
+        {
+            "id": 784,
+            "name": "My Star",
+            "status": "ACTIVE"
+        },
+        {
+            "id": 785,
+            "name": "AVP",
+            "status": "ACTIVE"
+        },
+        {
+            "id": 530,
+            "name": "PUBG",
+            "status": "ACTIVE"
+        },
+        {
+            "id": 531,
+            "name": "MCV",
+            "status": "ACTIVE"
+        },
+        {
+            "id": 787,
+            "name": "AMG",
+            "status": "INACTIVE"
+        }
+    ],
+    "categories": [
+        {
+            "generationName": "Gen20x",
+            "supportedHeadUnitGenerations": [
+                {
+                    "id": "Gen20xi2",
+                    "variant": "i2",
+                    "supportedHeadUnitReleases": [
+                        {
+                            "release": "SOP",
+                            "supportedHeadUnitSoftwareVersions": [
+                                "E52.5",
+                                "E049.0_674",
+                                "E051.5_1066",
+                                "E052.5_1341"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "generationName": "NTG",
+            "supportedHeadUnitGenerations": [
+                {
+                    "id": "NTGNTG6",
+                    "variant": "NTG6",
+                    "supportedHeadUnitReleases": [
+                        {
+                            "release": "FUP4",
+                            "supportedHeadUnitSoftwareVersions": [
+                                "E905.319",
+                                "E905.320",
+                                "E905.404"
+                            ]
+                        },
+                        {
+                            "release": "FUP3",
+                            "supportedHeadUnitSoftwareVersions": [
+                                "E871.103"
+                            ]
+                        },
+                        {
+                            "release": "SOP",
+                            "supportedHeadUnitSoftwareVersions": [
+                                "E100.0"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "NTGNTG7",
+                    "variant": "NTG7",
+                    "supportedHeadUnitReleases": [
+                        {
+                            "release": "FUP3",
+                            "supportedHeadUnitSoftwareVersions": [
+                                "E330.601"
+                            ]
+                        },
+                        {
+                            "release": "FUP4",
+                            "supportedHeadUnitSoftwareVersions": [
+                                "E444.600",
+                                "E444.303"
+                            ]
+                        },
+                        {
+                            "release": "SOP",
+                            "supportedHeadUnitSoftwareVersions": [
+                                "E023.100",
+                                "E100.0"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

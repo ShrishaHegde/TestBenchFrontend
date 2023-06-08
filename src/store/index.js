@@ -2,55 +2,34 @@ import { createStore } from 'vuex'
 import axios from "axios";
 export default createStore({
   state: {
-    headunits : [
-      {
-        name: "Gen20X",
-        showCards : false
-      },
-      {
-        name: "NTG",
-        showCards : false
-      }
-    ],
-    gen20x: [],
-    ntg: [],
-    services: []
+    details: [],
+    services: [],
+    categories: []
   },
   getters: {
   },
   mutations: {
-    SET_GEN20X(state, info) {
-      state.gen20x = info;
-    },
-    SET_NTG(state, info) {
-      state.ntg = info;
+    SET_DETAILS(state, info) {
+      state.details = info;
     },
     SET_SERV(state, info) {
       state.services = info;
     },
+    SET_CAT(state, info) {
+      state.categories = info;
+    },
   },
   actions: {
-    async fetchGen20x({ commit }) {
-      try {
-        const data = await axios.get(
-          "http://localhost:3000/gen20x"
-        );
-        commit("SET_GEN20X", data.data);
-      } catch (error) {
-        alert(error);
-        console.log(error);
-      }
-    },
-    async fetchNtg({ commit }) {
-      try {
-        const data = await axios.get(
-          "http://localhost:3000/ntg"
-        );
-        commit("SET_NTG", data.data);
-      } catch (error) {
-        alert(error);
-        console.log(error);
-      }
+    fetchDetails({ commit }, selected) {
+
+      axios.get('https://tbm-nonprod.dvb.corpinter.net/fetchDetails/Gen20x')
+        .then(response => {
+          console.log(response.data);
+          commit("SET_DETAILS", response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
     async fetchServices({ commit }) {
       try {
@@ -62,7 +41,18 @@ export default createStore({
         alert(error);
         console.log(error);
       }
-    }
+    },
+    async fetchCategories({ commit }) {
+      try {
+        const data = await axios.get(
+          "http://localhost:3000/categories"
+        );
+        commit("SET_CAT", data.data);
+      } catch (error) {
+        alert(error);
+        console.log(error);
+      }
+    },
   },
   modules: {
   }
