@@ -3,14 +3,15 @@
         <div class="popup-content">
             <!-- Popup content here -->
             <h5>{{ services.vin }}</h5>
-            <span>{{ services.gen }}</span>.<span>{{ services.variant }}</span> --  <span>{{ services.release }}</span> <br>
+            <span>{{ services.gen }}</span>.<span>{{ services.variant }}</span> -  <span>{{ services.release }}</span> <br>
             <p>Region : {{ services.region }}</p>
             <div class="serv" style="height: 400px">
                 <ag-grid-vue style="width: 650px; height: 400px;" class="ag-theme-alpine" :columnDefs="columnDefs"
                     :rowData="this.services.services" :pagination="true" :paginationPageSize=20
                     :defaultColDef="defaultColDef"></ag-grid-vue>
             </div>
-            <button @click="closePopup">Close</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" @click="closePopup">Close</button>
+
         </div>
     </div>
 </template>

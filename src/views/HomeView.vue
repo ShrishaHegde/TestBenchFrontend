@@ -37,7 +37,6 @@
           <option value="E871.103">E871.103</option>
           <option value="E905.320">E905.320</option>
           <option value="E905.404">"E905.404</option>
-          <option value="DK">Dk</option>
           <option value="E330.601">E330.601</option>
           <option value="E444.600">E444.600</option>
           <option value="E023.100">E023.100</option>
@@ -65,24 +64,25 @@
           <option value="USA">USA</option>
         </select>
        </div>
+       <button type="button" class="btn btn-outline-danger btn-sm" @click="clearAll">Clear All</button>
       </div>
       <div class="row">
         <div class="col" v-for="card in filteredDetails" :key="card.vin">
-          <div class="card" style="width: 18rem;margin:30px">
-            <div class="card-body gradient-custom">
+          <div class="card gradient-custom" style="width: 18rem;margin:30px">
+            <div class="card-body">
               <div class="rowed">
-                <h5 class="card-title">{{ card.gen }}.{{ card.variant }}</h5>
+                <h5 class="card-title">{{ card.gen }}-{{ card.variant }}</h5>
               <div class="status-icon">
                 <i v-if="card.connected" class="bi bi-wifi connected" style="font-size: 25px;margin-top:-2px"></i>
                 <i v-else class="bi bi-wifi-off disconnected" style="font-size: 25px;margin-top:-2px"></i>
               </div>
               </div>
               <p class="card-text">Release : {{ card.release }}</p>
-              <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
-              <p class="card-text">{{ card.vin }}</p>
-              <p class="card-text">Stage : {{ card.stage }}</p>
-              <p class="card-text">Software Version : {{ card.SwVersion }}</p>
               <p class="card-text">Region:{{ card.region }}</p>
+              <p class="card-text">Stage : {{ card.stage }}</p>
+              <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
+              <p class="card-text">Software Version : {{ card.SwVersion }}</p>
+              <p class="card-text">{{ card.vin }}</p>
               <div class="buttons">
                   <button type="button" class="btn btn-primary" @click="fetchServices(card.vin)">Services</button>
               </div>
@@ -114,12 +114,6 @@ export default {
         region: "",
         version: ""
       },
-      nt: {
-        release: "",
-        stage: "",
-        region: "",
-        version: ""
-      },
       releseOptions: {},
       isPopupVisible: false
 
@@ -129,7 +123,6 @@ export default {
     window.onload = () => {
       this.$store.dispatch("fetchDetails", "Gen20x/i2");
       this.$store.dispatch("fetchCategories");
-      // this.fetchDetails(); // Call your method here
     };
   },
   methods: {
@@ -144,6 +137,13 @@ export default {
     },
     hidePopup() {
       this.isPopupVisible = false;
+    },
+    clearAll(){
+        this.gen.release = "",
+        this.gen.stage = "",
+        this.gen.region = "",
+        this.gen.version = ""
+        console.log(this.categories)
     }
   },
   computed: {
@@ -200,7 +200,7 @@ export default {
 <style scoped>
 
 body {
-  background: rgba(243, 220, 179, 0.322)
+  background: rgba(88, 87, 83, 0.322)
 }
 .stages {
   display: flex;
@@ -299,8 +299,11 @@ body {
  align-self: center;
 }
 .card-body{
-  background: #dee2e69e;
   padding: 10px;
+}
+.card{
+  border-radius: 20px;
+  background: #dee2e69e;
   
 }
 .rowed{
@@ -335,16 +338,7 @@ body {
     opacity: 1;
   }
 }
-.gradient-custom {
-  /* fallback for old browsers */
-  background: #feada6;
 
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, rgba(254,173,166,0.5), rgba(245,239,239,0.5));
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, rgba(254,173,166,0.5), rgba(245,239,239,0.5))
-}
 
 
 </style>

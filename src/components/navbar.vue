@@ -10,11 +10,11 @@
     
       <div class="collapse navbar-collapse justify-content-md-center" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Procurement</a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Availability</a>
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link active" href="#">Availability</a>
           </li>
         </ul>
 
