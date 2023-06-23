@@ -2,6 +2,7 @@
     <div class="popup">
         <div class="popup-content">
             <!-- Popup content here -->
+            <button type="button" class="btn-close" aria-label="Close" @click="closePopup"></button>
             <h5>{{ services.vin }}</h5>
             <span>{{ services.gen }}</span>.<span>{{ services.variant }}</span> -  <span>{{ services.release }}</span> <br>
             <p>Region : {{ services.region }}</p>
@@ -10,8 +11,6 @@
                     :rowData="this.services.services" :pagination="true" :paginationPageSize=20
                     :defaultColDef="defaultColDef"></ag-grid-vue>
             </div>
-            <button type="button" class="btn btn-outline-danger btn-sm" @click="closePopup">Close</button>
-
         </div>
     </div>
 </template>
@@ -54,6 +53,15 @@ export default {
 </script>
   
 <style>
+.btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* Other styles for the close button */
+  }
+  .popup-content{
+    position: relative;
+  }
 .popup {
     position: fixed;
     top: 0;
@@ -86,6 +94,18 @@ export default {
     width: 20px; /* Adjust the width and height as per your icon's size */
     height: 20px;
     /* Additional styling as needed */
+  }
+
+  .ag-grid-container .ag-cell {
+    border-right: 1px solid #ccc;
+  }
+  
+  .ag-theme-alpine .ag-root-wrapper {
+    border-right: 1px solid #ccc;
+  }
+  
+  .ag-theme-alpine .ag-root-wrapper .ag-header-cell {
+    border-right: 1px solid #ccc;
   }
   
 </style>

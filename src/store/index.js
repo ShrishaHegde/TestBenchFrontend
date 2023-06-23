@@ -4,7 +4,8 @@ export default createStore({
   state: {
     details: [],
     services: [],
-    categories: []
+    categories: [],
+    card: {}
   },
   getters: {
   },
@@ -18,6 +19,10 @@ export default createStore({
     SET_CAT(state, info) {
       state.categories = info;
     },
+    SET_CARD(state, info) {
+      state.card = info;
+    },
+
   },
   actions: {
     fetchDetails({ commit }, selected) {
@@ -46,25 +51,14 @@ export default createStore({
     },
 
     fetchCategories({ commit }) {
-      axios.get('https://tbm-nonprod.dvb.corpinter.net/fetchDetailsNew')
+      axios.get('https://tbm-nonprod.dvb.corpinter.net/fetchDetails')
         .then(response => {
-          commit("SET_CAT", response.data);
+          commit("SET_CAT", response.data.categories);
         })
         .catch(error => {
           console.log(error);
         });
     },
-    // async fetchCategories({ commit }) {
-    //   try {
-    //     const data = await axios.get(
-    //       "http://localhost:3000/categories"
-    //     );
-    //     commit("SET_CAT", data.data);
-    //   } catch (error) {
-    //     alert(error);
-    //     console.log(error);
-    //   }
-    // },
   },
   modules: {
   }

@@ -1,9 +1,11 @@
 <template>
   <div class="wrapper">
     <nav class="navbar navbar-expand-lg navbar-dark">
+      <router-link :to="{ name: 'home' }" style="text-decoration: none; color: inherit;">
       <a class="navbar-brand ms-4" href="#">
         <img src="../assets/image.png" width="185" height="45" alt="">
       </a>
+    </router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

@@ -1,61 +1,44 @@
 <template>
+  <div class="menu-bar">
     <div class="stages">
-      <div class="pentagon" :class="{ active: currentStage === 'Gen20x/i2' }" @click="changeCurrentStage('Gen20x/i2')">
-        <span class="text">Gen20X.i2</span>
-      </div>
-      <div class="pentagon" :class="{ active: currentStage === 'Gen20x/i3' }" @click="changeCurrentStage('Gen20x/i3')">
-        <span class="text">Gen20X.i3</span>
-      </div>
-      <div class="pentagon" :class="{ active: currentStage === 'NTG/NTG6' }" @click="changeCurrentStage('NTG/NTG6')">
-        <span class="text">NTG6</span>
-      </div>
-      <div class="pentagon" :class="{ active: currentStage === 'NTG/NTG7' }" @click="changeCurrentStage('NTG/NTG7')">
-        <span class="text">NTG7</span>
-      </div>
-      <div class="search-bar">
-        <div class="form">
-          <i class="fa fa-search"></i>
-          <input type="text" class="form-control form-input" placeholder="Search by vin id" v-model="search">
-        </div>
+      <div class="pentagon" v-for="gens in HuGens" :key="gens.id" :class="{ active: currentStage === gens.id }"
+      @click="changeCurrentStage(gens)">
+      <span class="text">{{ gens.id }}</span>
     </div>
     </div>
-    <div class="container">
-      <div class="filters">
-        <div class="ifilter">
-        <label>Release</label> 
+    <div class="search-bar me-4">
+      <div class="form">
+        <i class="fa fa-search"></i>
+        <input type="text" class="form-control form-input" placeholder="Search by vin" v-model="search">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="filters">
+      <div class="ifilter">
+        <label>Release</label>
         <select v-model="gen.release" placeholder="">
           <option value="">All</option>
-          <option value="SOP">SOP</option>
-          <option value="FUP3">FUP3</option>
-          <option value="FUP4">FUP4</option>
+          <option v-for="filter in releaseFilters" :key="filter.release" :value="filter.release">{{ filter.release }}
+          </option>
         </select>
       </div>
       <div class="ifilter">
         <label> Version</label>
         <select v-model="gen.version">
           <option value="">All</option>
-          <option value="E871.103">E871.103</option>
-          <option value="E905.320">E905.320</option>
-          <option value="E905.404">"E905.404</option>
-          <option value="E330.601">E330.601</option>
-          <option value="E444.600">E444.600</option>
-          <option value="E023.100">E023.100</option>
-          <option value="E444.303">E444.303</option>
-          <option value="E52.5">E52.5</option>
-          <option value="E049.0_674">E049.0_674</option>
-          <option value="E051.5_1066">E051.5_1066</option>
-          <option value="E052.5_1341">E052.5_1341</option>
+          <option v-for="filter in versionFilters" :key="filter" :value="filter">{{ filter }}</option>
         </select>
-        </div>
-        <div class="ifilter">
+      </div>
+      <div class="ifilter">
         <label> Stage</label>
         <select v-model="gen.stage">
           <option value="">All</option>
           <option value="PROD">PROD</option>
           <option value="NONPROD">NONPROD</option>
         </select>
-        </div>
-        <div class="ifilter">
+      </div>
+      <div class="ifilter">
         <label>Region</label>
         <select v-model="gen.region">
           <option value="">All</option>
@@ -63,36 +46,48 @@
           <option value="NAM">NAM</option>
           <option value="USA">USA</option>
         </select>
-       </div>
-       <button type="button" class="btn btn-outline-danger btn-sm" @click="clearAll">Clear All</button>
       </div>
-      <div class="row">
-        <div class="col" v-for="card in filteredDetails" :key="card.vin">
-          <div class="card gradient-custom" style="width: 18rem;margin:30px">
-            <div class="card-body">
-              <div class="rowed">
-                <h5 class="card-title">{{ card.gen }}-{{ card.variant }}</h5>
+      <button type="button" class="btn btn-outline-secondary btn-sm" style="margin-top:-5px" @click="clearAll">Clear
+        All</button>
+    </div>
+    <div class="row">
+      <div class="col" v-for="(card, index) in filteredDetails" :key="card.vin">
+        <div class="card" style="width: 18rem;margin:30px">
+          <div class="card-body">
+            <div class="rowed">
+              <h5 class="card-title">{{ card.gen }}-{{ card.variant }}</h5>
               <div class="status-icon">
                 <i v-if="card.connected" class="bi bi-wifi connected" style="font-size: 25px;margin-top:-2px"></i>
                 <i v-else class="bi bi-wifi-off disconnected" style="font-size: 25px;margin-top:-2px"></i>
               </div>
-              </div>
-              <p class="card-text">Release : {{ card.release }}</p>
-              <p class="card-text">Region:{{ card.region }}</p>
-              <p class="card-text">Stage : {{ card.stage }}</p>
-              <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
-              <p class="card-text">Software Version : {{ card.SwVersion }}</p>
-              <p class="card-text">{{ card.vin }}</p>
-              <div class="buttons">
-                  <button type="button" class="btn btn-primary" @click="fetchServices(card.vin)">Services</button>
-              </div>
+            </div>
+            <p class="card-text">Release : {{ card.release }}</p>
+            <p class="card-text">Region:{{ card.region }}</p>
+            <p class="card-text">Stage : {{ card.stage }}</p>
+            <p class="card-text">Cubicle : {{ card.Cubicle }}</p>
+            <p class="card-text">Software Version : {{ card.SwVersion }}</p>
+            <div style="display:flex;justify-content: space-evenly;margin-bottom:1rem;
+            " class="card-text">
+              <p style="margin-bottom:0px" ref="textToCopy">{{  card.vin }} </p> 
+              <i class="fas fa-copy" @click="copyText(index)"></i>
+            </div>
+            <div class="buttons" style="display:flex;justify-content:space-around">
+              <button type="button" class="btn btn-primary btn-sm" @click="fetchServices(card.vin)">Services</button>
+              <router-link :to="{ name: 'book' }" style="text-decoration: none; color: inherit;"><button type="button" class="btn btn-primary btn-sm" @click="setSelectedCard(card)" >Book</button></router-link>
+            </div>
+            <div class="notification" :class="{ 'show': showNotification }">
+              Text copied!
             </div>
           </div>
         </div>
       </div>
     </div>
-    <popup v-if="isPopupVisible" @close="hidePopup"></popup>
-    <!-- <div>{{ categories[0].supportedHeadUnitGenerations }}</div> -->
+  </div>
+  <div class="notification" :class="{ 'show': showNotification }">
+    Text copied!
+  </div>
+  <popup v-if="isPopupVisible" @close="hidePopup"></popup>
+  <!-- <div>{{ categories[0].supportedHeadUnitGenerations }}</div> -->
 </template>
 
 <script>
@@ -105,8 +100,7 @@ export default {
   },
   data() {
     return {
-      stages: ["Gen20x/i2", "Gen20x/i3", "NTG/NTG6", "NTG/NTG7"],
-      currentStage: "Gen20x/i2",
+      currentStage: "Gen20xi2",
       search: "",
       gen: {
         release: "",
@@ -114,9 +108,19 @@ export default {
         region: "",
         version: ""
       },
-      releseOptions: {},
-      isPopupVisible: false
-
+      releaseFilters: [
+        {
+          "release": "SOP",
+          "supportedHeadUnitSoftwareVersions": [
+            "E52.5",
+            "E049.0_674",
+            "E051.5_1066",
+            "E052.5_1341"
+          ]
+        }
+      ],
+      isPopupVisible: false,
+      showNotification: false
     }
   },
   created() {
@@ -126,9 +130,10 @@ export default {
     };
   },
   methods: {
-    changeCurrentStage(stage) {
-      this.$store.dispatch("fetchDetails", stage);
-      this.currentStage = stage;
+    changeCurrentStage(gens) {
+      this.$store.dispatch("fetchDetails", gens.generationName + "/" + gens.variant);
+      this.currentStage = gens.id;
+      this.releaseFilters = gens.supportedHeadUnitReleases;
     },
 
     fetchServices(vin) {
@@ -138,36 +143,38 @@ export default {
     hidePopup() {
       this.isPopupVisible = false;
     },
-    clearAll(){
-        this.gen.release = "",
+    clearAll() {
+      this.gen.release = "",
         this.gen.stage = "",
         this.gen.region = "",
-        this.gen.version = ""
-        console.log(this.categories)
+        this.gen.version = "",
+        console.log(this.HuGens)
+    },
+    copyText(index) {
+      const textToCopy = this.$refs.textToCopy[index].innerText;
+      console.log(textToCopy);
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          console.log('Text copied to clipboard');
+        })
+        .catch(error => {
+          console.error('Unable to copy text:', error);
+        });
+        this.showNotification = true;
+        setTimeout(() => {
+        this.showNotification = false;
+      }, 2000);
+    },
+    setSelectedCard(card) {
+      console.log(card)
+      this.$store.commit('SET_CARD', card);
     }
   },
   computed: {
-
-    // gen20xSoftwareVersions() {
-    //   const gen20x = this.categories.find(category => category.generationName === 'Gen20x').supportedHeadUnitGenerations.find(generation => generation.variant === 'i2');
-    //   console.log(gen20x)
-    //   return gen20x.supportedHeadUnitReleases.reduce((versions, release) => versions.concat(release.supportedHeadUnitSoftwareVersions), []);
-    // },
-    // ntg6SoftwareVersions() {
-    //   const ntg6 = this.categories.find(category => category.generationName === 'NTG').supportedHeadUnitGenerations.find(generation => generation.variant === 'NTG6');
-    //   return ntg6.supportedHeadUnitReleases.reduce((versions, release) => versions.concat(release.supportedHeadUnitSoftwareVersions), []);
-    // },
-    // ntg7SoftwareVersions() {
-    //   const ntg7 = this.categories.find(category => category.generationName === 'NTG').supportedHeadUnitGenerations.find(generation => generation.variant === 'NTG7');
-    //   return ntg7.supportedHeadUnitReleases.reduce((versions, release) => versions.concat(release.supportedHeadUnitSoftwareVersions), []);
-    // },
-
-
-
     details() {
       return this.$store.state.details;
     },
-    categories(){
+    categories() {
       return this.$store.state.categories;
     },
     filteredDetails() {
@@ -176,19 +183,41 @@ export default {
       const stage = this.gen.stage.toLowerCase();
       const region = this.gen.region.toLowerCase();
       const query = this.search.toLowerCase();
-      if(query == ''){
+      if (query == '') {
         return this.details.filter(card => {
-        return card.SwVersion.toLowerCase().includes(version) & card.release.toLowerCase().includes(release) & card.stage.toLowerCase().startsWith(stage) & card.region.toLowerCase().includes(region);
-      });
+          return card.SwVersion.toLowerCase().includes(version) & card.release.toLowerCase().includes(release) & card.stage.toLowerCase().startsWith(stage) & card.region.toLowerCase().includes(region);
+        });
       }
-      else{
+      else {
         return this.details.filter(card => {
-        return card.vin.toLowerCase().startsWith(query);
-      });
+          return card.vin.toLowerCase().includes(query);
+        });
       }
-      
+    },
 
-      
+    versionFilters() {
+      if (this.gen.release != "") {
+        const filter = this.releaseFilters.find(releases => releases.release === this.gen.release
+        );
+        return filter.supportedHeadUnitSoftwareVersions;
+      }
+      else {
+        const versions = [];
+        this.releaseFilters.forEach(release => {
+          release.supportedHeadUnitSoftwareVersions.forEach(ver => versions.push(ver))
+        });
+        return versions;
+      }
+    },
+    HuGens() {
+      return this.categories.map(category => {
+        return category.supportedHeadUnitGenerations.map(hu => {
+          return {
+            generationName: category.generationName,
+            ...hu
+          };
+        });
+      });
     },
     services() {
       return this.$store.state.services;
@@ -198,19 +227,24 @@ export default {
 </script>
 
 <style scoped>
-
 body {
   background: rgba(88, 87, 83, 0.322)
 }
+.menu-bar{
+  display: flex;
+  padding: 10px;
+  border-top: 0.5px solid;
+  justify-content: space-between;
+  background-color: black;
+  text-align: left;
+}
 .stages {
   display: flex;
-  padding: 10px 300px;
-  border-top: 0.5px solid;
-  justify-content: space-around;
-  background-color: black;
+  justify-content: space-around; 
 }
 
 .pentagon {
+  margin: 0px 30px;
   position: relative;
   color: #9c9898;
   transition: color 0.3s;
@@ -237,13 +271,13 @@ body {
   background-color: rgb(55, 55, 245);
 }
 
-.form{
+.form {
   position: relative;
 }
 
-.form .fa-search{
+.form .fa-search {
   position: absolute;
-  top:10px;
+  top: 10px;
   left: 20px;
   color: #9ca3af;
 }
@@ -254,26 +288,29 @@ body {
   text-indent: 33px;
   border-radius: 10px;
   border: none;
-  
-}
-.form-control{
-  color: white;
-}
-*::-webkit-input-placeholder {
-  color:#9ca3af;
-}
-.form-input:focus{
-
-  box-shadow: none;
   border: 1px solid whitesmoke;
 }
 
-.filters{
+.form-control {
+  color: white;
+}
+
+*::-webkit-input-placeholder {
+  color: #9ca3af;
+}
+
+.form-input:focus {
+  box-shadow: none;
+  
+}
+
+.filters {
   margin-top: 20px;
   display: flex;
   justify-content: space-evenly;
 }
-.ifilter select{
+
+.ifilter select {
   width: 100px;
   margin-left: 10px;
 }
@@ -295,31 +332,38 @@ body {
   border-radius: 10px;
   background: rgba(121, 204, 230, 0.24);
 }
-.card-title{
- align-self: center;
+
+.card-title {
+  align-self: center;
 }
-.card-body{
+
+.card-body {
   padding: 10px;
 }
-.card{
+
+.card {
   border-radius: 20px;
   background: #dee2e69e;
-  
+
 }
-.rowed{
+
+.rowed {
   display: flex;
   justify-content: space-around;
 }
 
-.status-icon{
+.status-icon {
   margin-top: -8px;
 }
-.connected{
+
+.connected {
   color: green;
 }
-.disconnected{
+
+.disconnected {
   color: red;
 }
+
 .col {
   opacity: 0;
   animation-name: fade-in;
@@ -338,7 +382,20 @@ body {
     opacity: 1;
   }
 }
+.notification {
+  position: fixed;
+  color: aliceblue;
+  top: 50%;
+  right: 50%;
+  background-color: #444141;
+  padding: 10px;
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
 
-
+.notification.show {
+  opacity: 1;
+}
 
 </style>

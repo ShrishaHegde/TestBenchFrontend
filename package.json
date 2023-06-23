@@ -14,9 +14,13 @@
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",
     "core-js": "^3.8.3",
+    "dhtmlx-scheduler": "^6.0.4",
+    "moment": "^2.29.4",
     "vue": "^3.2.13",
     "vue-flip": "^3.0.2",
+    "vue-moment": "^4.1.0",
     "vue-router": "^4.0.3",
+    "vuejs-datepicker": "^1.6.2",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
